@@ -41,7 +41,7 @@ titleScreen = C.runCurses $ do
         renderTitleScreen title = do 
             (w,h) <- C.screenSize
             dw <- C.defaultWindow
-            color <- C.newColorID C.ColorGreen C.ColorDefault 1 
+            color <- C.newColorID C.ColorYellow C.ColorDefault 1 
             isColorable <- C.supportsColor
             (nothing: walker) <- return $ lines title
             C.updateWindow dw $ do 
@@ -56,5 +56,5 @@ titleScreen = C.runCurses $ do
               C.moveCursor (w `div` 2 + 8) (h `div` 2 - 12)
               C.drawString "Press any key to start..."
             C.render
-            _ <- getInputTitle
+            _ <- dummyInput
             return ()
