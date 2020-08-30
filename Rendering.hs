@@ -41,7 +41,7 @@ titleScreen = C.runCurses $ do
         renderTitleScreen title = do 
             (w,h) <- C.screenSize
             dw <- C.defaultWindow
-            color <- C.newColorID C.ColorYellow C.ColorDefault 1 
+            color <- C.newColorID C.ColorCyan C.ColorDefault 1 
             isColorable <- C.supportsColor
             (nothing: walker) <- return $ lines title
             C.updateWindow dw $ do 
